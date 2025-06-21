@@ -3,6 +3,7 @@ from pptx.util import Inches, Pt
 from pptx.dml.color import RGBColor
 from pptx.enum.text import PP_ALIGN
 import os
+from urllib.request import urlretrieve
 
 # Create a presentation with a professional theme
 prs = Presentation()
@@ -25,7 +26,7 @@ def create_title_slide(prs, title_text, subtitle_text):
     
     return slide
 
-def create_analysis_slide(prs, title, image_path, description):
+def create_analysis_slide(prs, title, image_url, description):
     slide = prs.slides.add_slide(prs.slide_layouts[5])
     
     # Add title
@@ -36,7 +37,9 @@ def create_analysis_slide(prs, title, image_path, description):
     title_frame.paragraphs[0].font.bold = True
     title_frame.paragraphs[0].alignment = PP_ALIGN.CENTER
     
-    # Add image
+    # Download and add image
+    image_path = f"temp_{title.replace(' ', '_')}.png"
+    urlretrieve(image_url, image_path)
     left = Inches(1)
     top = Inches(1.5)
     width = height = Inches(7)
@@ -51,55 +54,80 @@ def create_analysis_slide(prs, title, image_path, description):
         paragraph.font.color.rgb = RGBColor(64, 64, 64)
         paragraph.space_after = Pt(12)
     
+    return image_path
+
+def create_text_slide(prs, title, content):
+    slide = prs.slides.add_slide(prs.slide_layouts[5])
+    
+    # Add title
+    title_box = slide.shapes.add_textbox(Inches(0.5), Inches(0.5), Inches(9), Inches(1))
+    title_frame = title_box.text_frame
+    title_frame.text = title
+    title_frame.paragraphs[0].font.size = Pt(32)
+    title_frame.paragraphs[0].font.bold = True
+    title_frame.paragraphs[0].alignment = PP_ALIGN.CENTER
+    
+    # Add content
+    content_box = slide.shapes.add_textbox(Inches(1), Inches(1.5), Inches(8), Inches(5))
+    content_frame = content_box.text_frame
+    content_frame.text = content
+    for paragraph in content_frame.paragraphs:
+        paragraph.font.size = Pt(18)
+        paragraph.font.color.rgb = RGBColor(64, 64, 64)
+        paragraph.space_after = Pt(12)
+    
     return slide
 
 # Create title slide
 title_slide = create_title_slide(
     prs,
     "Exploratory Data Analysis: Cars Dataset",
-    "Analysis of Car Specifications and Pricing"
+    "A comprehensive analysis of car specifications and pricing patterns"
 )
 
-# Create analysis slides
-create_analysis_slide(
+# Add introduction slide
+intro_slide = create_text_slide(
+    prs,
+    "Project Overview",
+    "This presentation contains a comprehensive Exploratory Data Analysis (EDA) of a car dataset, examining various aspects of car specifications and pricing patterns."
+)
+
+# Add slides for each visualization
+price_distribution_slide = create_analysis_slide(
     prs,
     "Price Distribution Analysis",
-    'price_distribution.png',
-    "Key Insights:\n\n• Most cars priced below $50,000\n• Right-skewed distribution indicating\n  premium/luxury segment\n• Clear price ranges for different market segments"
+    "https://raw.githubusercontent.com/lakshya189/Exploratory-Data-Analysis-Cars-Dataset-Assignment/master/visualizations/price_distribution.png",
+    "Shows the distribution of car prices across different market segments\nHighlights the concentration of prices in different ranges\nIdentifies premium and luxury vehicle segments"
 )
 
-create_analysis_slide(
+hp_vs_price_slide = create_analysis_slide(
     prs,
-    "Engine Power Analysis",
-    'hp_vs_price.png',
-    "Relationship Analysis:\n\n• Strong positive correlation between\n  engine power and price\n• Higher HP engines typically found in\n  premium/luxury vehicles\n• Clear price thresholds at different HP levels"
+    "Engine Power vs Price",
+    "https://raw.githubusercontent.com/lakshya189/Exploratory-Data-Analysis-Cars-Dataset-Assignment/master/visualizations/hp_vs_price.png",
+    "Demonstrates the relationship between engine power and vehicle price\nShows how higher HP generally correlates with higher prices\nIdentifies price thresholds at different HP levels"
 )
 
-create_analysis_slide(
+mpg_relationship_slide = create_analysis_slide(
     prs,
     "Fuel Efficiency Analysis",
-    'mpg_relationship.png',
-    "MPG Relationship Analysis:\n\n• Strong positive correlation between\n  highway and city MPG\n• Most cars have highway MPG between\n  20-30 mpg\n• Clear efficiency clusters indicating\n  different vehicle types"
+    "https://raw.githubusercontent.com/lakshya189/Exploratory-Data-Analysis-Cars-Dataset-Assignment/master/visualizations/mpg_relationship.png",
+    "Shows the relationship between highway and city fuel efficiency\nHighlights the strong positive correlation\nIdentifies efficiency clusters across different vehicle types"
 )
 
-create_analysis_slide(
+price_by_make_slide = create_analysis_slide(
     prs,
-    "Market Segment Analysis",
-    'price_by_make.png',
-    "Price Distribution by Make:\n\n• Distinct price ranges for different\n  car makes\n• Luxury brands have premium price\n  positioning\n• Clear market segmentation based on\n  brand and features"
+    "Market Segmentation",
+    "https://raw.githubusercontent.com/lakshya189/Exploratory-Data-Analysis-Cars-Dataset-Assignment/master/visualizations/price_by_make.png",
+    "Shows price distribution across different car makes\nHighlights distinct market segments\nDemonstrates pricing strategies across brands"
 )
 
-# Create conclusions slide
-conclusion_slide = prs.slides.add_slide(prs.slide_layouts[5])
+# Add conclusion slide
+conclusion_slide = create_text_slide(
+    prs,
+    "Key Findings",
+    "1. Price Analysis:\n   - Clear distribution of car prices\n   - Strong correlation between engine power and price\n   - Distinct market segments by make\n\n2. Engine Analysis:\n   - Higher horsepower generally leads to higher prices\n   - Clear price thresholds at different HP levels\n\n3. Fuel Efficiency:\n   - Strong positive correlation between city and highway MPG\n   - Efficiency clusters indicate different vehicle types"
+)
 
-# Add title
-conclusion_title = conclusion_slide.shapes.add_textbox(Inches(0.5), Inches(0.5), Inches(9), Inches(1))
-conclusion_title.text_frame.text = "Key Findings and Recommendations"
-conclusion_title.text_frame.paragraphs[0].font.size = Pt(32)
-conclusion_title.text_frame.paragraphs[0].font.bold = True
-conclusion_title.text_frame.paragraphs[0].alignment = PP_ALIGN.CENTER
-
-# Add main findings
 findings_box = conclusion_slide.shapes.add_textbox(Inches(1), Inches(1.5), Inches(8), Inches(4))
 findings_frame = findings_box.text_frame
 findings_frame.text = "Main Findings:\n\n• Clear market segmentation based on\n  price and specifications\n• Strong correlation between technical\n  specifications and pricing\n• Distinct patterns in fuel efficiency\n  across different vehicle types\n• Significant variation in pricing\n  strategies across car makes"
