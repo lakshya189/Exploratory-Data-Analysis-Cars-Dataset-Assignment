@@ -36,9 +36,20 @@ This repository contains a comprehensive Exploratory Data Analysis (EDA) of a ca
 - `Cars_data.csv`: Original dataset containing car specifications
 - `EDA_Assignment_Day_14.ipynb`: Jupyter notebook containing the analysis code
 - `EDA_Assignment_Day_14_Completed.ipynb`: Completed version of the analysis notebook
-- `Car_Analysis_Presentation.pptx`: Professional presentation of the analysis results
+- `reports/Car_Analysis_Presentation.pptx`: Professional PowerPoint presentation of the analysis results
 - `cleaned_cars_data.csv`: Cleaned version of the dataset
-- `*.png`: Visualization plots generated during analysis
+- `visualizations/*.png`: Visualization plots generated during analysis
+
+## Presentation
+
+The project includes a professional PowerPoint presentation (`Car_Analysis_Presentation.pptx`) that summarizes the key findings and insights from the analysis. The presentation includes:
+
+- Title slide with project overview
+- Detailed analysis slides with visualizations
+- Key findings and recommendations
+- Professional formatting and layout
+
+You can view the presentation in any PowerPoint viewer or compatible software.
 
 ## Analysis Components
 
