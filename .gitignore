@@ -38,9 +38,10 @@ ENV/
 
 # Large files
 *.pdf
-*.pptx
 *.xlsx
 *.docx
+!Car_Analysis_Presentation.pptx
+*.pptx
 
 # Temporary files
 *.tmp
