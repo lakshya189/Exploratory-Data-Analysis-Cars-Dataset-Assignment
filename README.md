@@ -1,6 +1,6 @@
 # Exploratory Data Analysis - Cars Dataset
 
-![Price Distribution](https://raw.githubusercontent.com/lakshya189/Exploratory-Data-Analysis-Cars-Dataset-Assignment/master/visualization/price_distribution.png)
+![Price Distribution](https://raw.githubusercontent.com/lakshya189/Exploratory-Data-Analysis-Cars-Dataset-Assignment/master/visualizations/price_distribution.png)
 
 ## Project Overview
 This repository contains a comprehensive Exploratory Data Analysis (EDA) of a car dataset, examining various aspects of car specifications and pricing patterns.
@@ -8,25 +8,25 @@ This repository contains a comprehensive Exploratory Data Analysis (EDA) of a ca
 ## Key Visualizations
 
 ### 1. Price Distribution
-![Price Distribution](https://raw.githubusercontent.com/lakshya189/Exploratory-Data-Analysis-Cars-Dataset-Assignment/master/visualization/price_distribution.png)
+![Price Distribution](https://raw.githubusercontent.com/lakshya189/Exploratory-Data-Analysis-Cars-Dataset-Assignment/master/visualizations/price_distribution.png)
 - Shows the distribution of car prices across different market segments
 - Highlights the concentration of prices in different ranges
 - Identifies premium and luxury vehicle segments
 
 ### 2. Engine Power vs Price
-![Engine HP vs Price](https://raw.githubusercontent.com/lakshya189/Exploratory-Data-Analysis-Cars-Dataset-Assignment/master/visualization/hp_vs_price.png)
+![Engine HP vs Price](https://raw.githubusercontent.com/lakshya189/Exploratory-Data-Analysis-Cars-Dataset-Assignment/master/visualizations/hp_vs_price.png)
 - Demonstrates the relationship between engine power and vehicle price
 - Shows how higher HP generally correlates with higher prices
 - Identifies price thresholds at different HP levels
 
 ### 3. Fuel Efficiency Analysis
-![MPG Relationship](https://raw.githubusercontent.com/lakshya189/Exploratory-Data-Analysis-Cars-Dataset-Assignment/master/visualization/mpg_relationship.png)
+![MPG Relationship](https://raw.githubusercontent.com/lakshya189/Exploratory-Data-Analysis-Cars-Dataset-Assignment/master/visualizations/mpg_relationship.png)
 - Shows the relationship between highway and city fuel efficiency
 - Highlights the strong positive correlation
 - Identifies efficiency clusters across different vehicle types
 
 ### 4. Market Segmentation
-![Price by Make](https://raw.githubusercontent.com/lakshya189/Exploratory-Data-Analysis-Cars-Dataset-Assignment/master/visualization/price_by_make.png)
+![Price by Make](https://raw.githubusercontent.com/lakshya189/Exploratory-Data-Analysis-Cars-Dataset-Assignment/master/visualizations/price_by_make.png)
 - Shows price distribution across different car makes
 - Highlights distinct market segments
 - Demonstrates pricing strategies across brands
