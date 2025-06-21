@@ -1,6 +1,35 @@
-# Car Data Analysis Project
+# Exploratory Data Analysis - Cars Dataset
 
-This repository contains the analysis of a car dataset, exploring various aspects of car specifications and pricing.
+![Price Distribution](price_distribution.png)
+
+## Project Overview
+This repository contains a comprehensive Exploratory Data Analysis (EDA) of a car dataset, examining various aspects of car specifications and pricing patterns.
+
+## Key Visualizations
+
+### 1. Price Distribution
+![Price Distribution](price_distribution.png)
+- Shows the distribution of car prices across different market segments
+- Highlights the concentration of prices in different ranges
+- Identifies premium and luxury vehicle segments
+
+### 2. Engine Power vs Price
+![Engine HP vs Price](hp_vs_price.png)
+- Demonstrates the relationship between engine power and vehicle price
+- Shows how higher HP generally correlates with higher prices
+- Identifies price thresholds at different HP levels
+
+### 3. Fuel Efficiency Analysis
+![MPG Relationship](mpg_relationship.png)
+- Shows the relationship between highway and city fuel efficiency
+- Highlights the strong positive correlation
+- Identifies efficiency clusters across different vehicle types
+
+### 4. Market Segmentation
+![Price by Make](price_by_make.png)
+- Shows price distribution across different car makes
+- Highlights distinct market segments
+- Demonstrates pricing strategies across brands
 
 ## Project Structure
 
@@ -50,13 +79,34 @@ This repository contains the analysis of a car dataset, exploring various aspect
 3. Run the notebook `EDA_Assignment_Day_14.ipynb` to reproduce the analysis
 4. Review the presentation for analysis results
 
-## Visualizations
+## Key Findings
 
-The project includes several visualizations that help understand the data:
-- Price distribution
-- Engine HP vs Price relationship
-- Fuel efficiency analysis
-- Market segmentation by car make
+1. **Market Segmentation**:
+   - Clear distinction between economy and luxury segments
+   - Significant price variation across different car makes
+   - Strong correlation between technical specifications and pricing
+
+2. **Technical Specifications**:
+   - Higher HP engines generally found in premium/luxury vehicles
+   - Most cars have highway MPG between 20-30 mpg
+   - 4-cylinder engines are most common
+
+3. **Pricing Patterns**:
+   - Luxury brands have distinct price distributions
+   - Engine specifications significantly influence pricing
+   - Some makes show more consistent pricing while others have high variability
+
+## Recommendations
+
+1. For Manufacturers:
+   - Optimize pricing strategy based on market positioning
+   - Consider fuel efficiency in pricing decisions
+   - Analyze competitor pricing patterns
+
+2. For Consumers:
+   - Consider both price and specifications when purchasing
+   - Understand market segments and price ranges
+   - Compare technical specifications across different price points
 
 ## License
 
@@ -64,4 +114,4 @@ This project is for educational purposes only.
 
 ## Author
 
-Created by [Your Name] as part of the EDA Assignment Day 14
+Created by Lakshya as part of the EDA Assignment Day 14
