@@ -49,7 +49,7 @@ The project includes a professional PowerPoint presentation (`Car_Analysis_Prese
 - Key findings and recommendations
 - Professional formatting and layout
 
-You can view the presentation in any PowerPoint viewer or compatible software.
+The presentation is available as a compressed file (`reports/Car_Analysis_Presentation.zip`). You can download and extract it to view the PowerPoint presentation using any PowerPoint viewer or compatible software.
 
 ## Analysis Components
 
